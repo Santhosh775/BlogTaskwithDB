@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Details</title>
   <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> <!-- Optional: Your stylesheet for styling -->
-</head>
+  <link rel="stylesheet" href="style.css">
 <body>
     <div id="cardContent"></div>
 
     <script>
     document.addEventListener('DOMContentLoaded', async function () {
-      // Get the post ID from the URL query parameter
       const urlParams = new URLSearchParams(window.location.search);
       const postId = urlParams.get('id');
 
@@ -40,11 +38,3 @@
     </script>
 </body>
 </html>
-<!-- <h2>${post.title}</h2>
-<img src="data:image/jpeg;base64,${post.image}" alt="Card Image">
-<p>${post.description}</p> -->
-
-<!-- <h2>${card.title}</h2>
-<img src="${card.image}" alt="Card Image">
-<p>${card.description}</p>
-<p>Category: ${card.category}</p> -->
