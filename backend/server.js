@@ -7,19 +7,17 @@ const cors = require('cors');
 
 const app = express();
 
-// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/blogDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-// Define the Post Schema
 const postSchema = new mongoose.Schema({
   title: String,
   description: String,
   content: String,
   category: String,
-  image: String, // Store image as base64 or file path
+  image: String,
 });
 
 const Post = mongoose.model('Post', postSchema);
@@ -30,13 +28,13 @@ app.use(express.static('public'));
 app.use(cors());
 
 // Set up multer for file upload
-const storage = multer.memoryStorage(); // Store the image in memory as base64
+const storage = multer.memoryStorage(); 
 const upload = multer({ storage: storage });
 
 // API Endpoints
 app.post('/createPost', upload.single('image'), async (req, res) => {
   const { title, description, content, category } = req.body;
-  const image = req.file ? req.file.buffer.toString('base64') : null; // Convert the image to base64
+  const image = req.file ? req.file.buffer.toString('base64') : null; 
 
   if (!image) {
     return res.status(400).send('Image is required');
@@ -47,7 +45,7 @@ app.post('/createPost', upload.single('image'), async (req, res) => {
     description,
     content,
     category,
-    image, // Store the image as base64 in the database
+    image, 
   });
 
   try {
@@ -86,7 +84,6 @@ app.get('/getPost/:id', async (req, res) => {
 
 
 
-// Start the server
 app.listen(3000, () => {
   console.log('Server started on http://localhost:3000');
 });
