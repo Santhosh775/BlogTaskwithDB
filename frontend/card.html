@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Display</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="card.css">
+</head>
+<body class="cardbody">
+    <div class="Catcard">
+        <!-- Types of blog user can select -->
+        <div class="categories">
+            <h2>Categories</h2>
+            <form id="categoryFilterForm">
+                <input type="checkbox" id="personal" name="blogType" value="Personal Blog">
+                <label for="personal">Personal Blog</label><br>
+            
+                <input type="checkbox" id="tech" name="blogType" value="Technology Blog">
+                <label for="tech">Technology Blog</label><br>
+            
+                <input type="checkbox" id="travel" name="blogType" value="Travel Blog">
+                <label for="travel">Travel Blog</label><br>
+            
+                <input type="checkbox" id="food" name="blogType" value="Food Blog">
+                <label for="food">Food Blog</label><br>
+            
+                <input type="checkbox" id="fashion" name="blogType" value="Fashion Blog">
+                <label for="fashion">Fashion Blog</label><br>
+            
+                <input type="checkbox" id="lifestyle" name="blogType" value="Lifestyle Blog">
+                <label for="lifestyle">Lifestyle Blog</label><br>
+            
+                <input type="checkbox" id="business" name="blogType" value="Business Blog">
+                <label for="business">Business Blog</label><br>
+            
+                <input type="checkbox" id="education" name="blogType" value="Education Blog">
+                <label for="education">Education Blog</label><br>
+            
+                <input type="checkbox" id="health" name="blogType" value="Health & Fitness Blog">
+                <label for="health">Health & Fitness Blog</label><br>
+            
+                <input type="checkbox" id="parenting" name="blogType" value="Parenting Blog">
+                <label for="parenting">Parenting Blog</label><br>
+            
+                <input type="checkbox" id="finance" name="blogType" value="Finance Blog">
+                <label for="finance">Finance Blog</label><br>
+            
+                <input type="checkbox" id="entertainment" name="blogType" value="Entertainment Blog">
+                <label for="entertainment">Entertainment Blog</label><br>
+            
+                <input type="checkbox" id="photography" name="blogType" value="Photography Blog">
+                <label for="photography">Photography Blog</label><br>
+            
+                <input type="checkbox" id="sports" name="blogType" value="Sports Blog">
+                <label for="sports">Sports Blog</label><br><br>
+            </form>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for blog posts..." />
+            <button id="searchButton"><i class="fa fa-search"></i></button>
+        </div>
+        <!-- Card container -->
+        <div class="Card" id="cardsContainer"></div>
+    </div>
+    
+    <script src="card.js"></script>
+</body>
+</html>

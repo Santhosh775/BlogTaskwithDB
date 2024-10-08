@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+</head>
+<body>
+    <main>
+      <div class="MainForm">
+        <h2>Create Post</h2>
+
+        <!-- Image upload code -->
+        <div class="upload-container">
+          <span>Featured image</span>
+          <div id="drop-area" class="drop-area">
+              <p>Drag and drop your image here</p>
+              <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)" hidden>
+              <button id="browseBtn" onclick="document.getElementById('fileElem').click()">Browse</button>
+          </div>
+          <div id="gallery" class="gallery"></div>
+      </div>
+
+      <!-- Blog Form -->
+        <div class="Formcard">
+          <form id="cardForm" method="POST" action="/createPost" enctype="multipart/form-data">
+            <label for="titleInput">Title</label>&nbsp;<span class="star">*</span>
+            <br>
+            <input type="text" id="titleInput" name="title" class="title" required>
+            <p id="count">0/50</p>
+            <p id="titleError" class="error"></p>
+            <br>
+            <label for="descInput">Card Description</label>&nbsp;<span class="star">*</span>
+            <br>
+            <input id="descInput" name="description" rows="5" cols="50" class="description" required></input>
+            <br><br>
+            <span>Content</span><span class="star">&nbsp;*</span>
+            <br>
+            <div id="editor">
+              <textarea name="content" id="contentTextarea"></textarea>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+      <!-- Types of Blog radio buttons -->
+        <div class="categories">
+          <h2>Categories</h2>
+          <form id="Categories">
+            <input type="radio" id="personal" name="blogType" value="Personal Blog" required>
+            <label for="personal">Personal Blog</label><br>
+
+            <input type="radio" id="tech" name="blogType" value="Technology Blog">
+            <label for="tech">Technology Blog</label><br>
+    
+            <input type="radio" id="travel" name="blogType" value="Travel Blog">
+            <label for="travel">Travel Blog</label><br>
+    
+            <input type="radio" id="food" name="blogType" value="Food Blog">
+            <label for="food">Food Blog</label><br>
+    
+            <input type="radio" id="fashion" name="blogType" value="Fashion Blog">
+            <label for="fashion">Fashion Blog</label><br>
+    
+            <input type="radio" id="lifestyle" name="blogType" value="Lifestyle Blog">
+            <label for="lifestyle">Lifestyle Blog</label><br>
+    
+            <input type="radio" id="business" name="blogType" value="Business Blog">
+            <label for="business">Business Blog</label><br>
+    
+            <input type="radio" id="education" name="blogType" value="Education Blog">
+            <label for="education">Education Blog</label><br>
+    
+            <input type="radio" id="health" name="blogType" value="Health & Fitness Blog">
+            <label for="health">Health & Fitness Blog</label><br>
+    
+            <input type="radio" id="parenting" name="blogType" value="Parenting Blog">
+            <label for="parenting">Parenting Blog</label><br>
+    
+            <input type="radio" id="finance" name="blogType" value="Finance Blog">
+            <label for="finance">Finance Blog</label><br>
+    
+            <input type="radio" id="entertainment" name="blogType" value="Entertainment Blog">
+            <label for="entertainment">Entertainment Blog</label><br>
+    
+            <input type="radio" id="photography" name="blogType" value="Photography Blog">
+            <label for="photography">Photography Blog</label><br>
+    
+            <input type="radio" id="sports" name="blogType" value="Sports Blog">
+            <label for="sports">Sports Blog</label><br><br>
+          </form>
+          <button type="button" class="add" onclick="saveCard()"><i class="fa-solid fa-paper-plane"></i>Publish</button>
+        </div>
+      </main>
+      <!-- Table that view all cards -->
+      <div class="table-container">
+        <table id="cardsTable">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script src="script.js"></script>
+    <script src="card.js"></script>
+
+</body>
+</html>
+
